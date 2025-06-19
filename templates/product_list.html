@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body class="p-10 bg-gray-100">
+    <h class="text-2xl mb-4">mahsulot listi</h>
+    <div>
+        {% for product in products %}
+            <a href="{% url 'product_detail' product.pk %}" class="border p-4 bg-white rounded-lg shadow" >
+                <img src="{{ product.image .url }}" class="h-40 object-cover w-full rounded" alt="">
+                <h2> class="text-xl mt-2"> {{ product.name }} </h2>
+                <p class="text-xl mt-2"> {{ product.name }} </p>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>
